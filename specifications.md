@@ -155,6 +155,7 @@ Recommendations
 11. For “users enter the title of a book,” should they type an exact title, select from autocomplete results, or both?
 
 - no autocomplete results for now
+- Updated 2026-06-08: autocomplete will be included in Phase 1. With the small (~50 title) known catalog, autocomplete is the most reliable way to resolve a typed title to a specific book and avoids fragile exact-string matching. See Milestone 4 in `plan.md`.
 
 12. Should recommendations be limited to books in the prototype database, or can AI suggest books outside the local dataset?
 

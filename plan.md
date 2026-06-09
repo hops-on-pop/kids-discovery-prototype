@@ -32,35 +32,39 @@ Phase 1 data will use existing catalog metadata fields only:
 
 ## Milestone 1: Project Foundation
 
-- [ ] Review the local Next.js v16 documentation in `node_modules/next/dist/docs/` before implementing app routes, server actions, data fetching, or metadata changes.
+- [x] Review the local Next.js v16 documentation in `node_modules/next/dist/docs/` before implementing app routes, server actions, data fetching, or metadata changes.
 - [ ] Install and configure missing project dependencies:
-  - [ ] Drizzle ORM and Drizzle Kit.
-  - [ ] PostgreSQL client package.
-  - [ ] AI SDK and OpenAI provider package.
-  - [ ] ShadCN UI setup and required Radix dependencies.
-  - [ ] CSV parsing utilities for import scripts.
+  - [x] Drizzle ORM and Drizzle Kit.
+  - [x] PostgreSQL client package.
+  - [x] AI SDK and OpenAI provider package.
+  - [x] ShadCN UI setup and required Radix dependencies.
+  - [x] CSV parsing utilities for import scripts.
   - [ ] Any lightweight fuzzy-search utility if typo tolerance remains feasible within scope.
-- [ ] Document required environment variables without committing secrets:
-  - [ ] `DATABASE_URL`
-  - [ ] `OPENAI_API_KEY`
-  - [ ] Any Supabase-specific database connection values if needed.
-- [ ] Create the database foundation:
-  - [ ] Enable pgvector in PostgreSQL.
-  - [ ] Define Drizzle schema for books, authors, keywords, and relationships.
-  - [ ] Add an embedding column suitable for `text-embedding-3-small`.
-  - [ ] Create migrations and a repeatable migration workflow.
-- [ ] Confirm local development can run with Bun and the current project scripts.
+- [x] Document required environment variables without committing secrets:
+  - [x] `DATABASE_URL`
+  - [x] `OPENAI_API_KEY`
+  - [x] Any Supabase-specific database connection values if needed.
+- [x] Create the database foundation:
+  - [x] Enable the pgvector extension in PostgreSQL.
+  - [x] Enable the `pg_trgm` extension to support trigram-based autocomplete and fuzzy/lexical matching.
+  - [x] Define Drizzle schema for books, authors, keywords, and relationships.
+  - [x] Add a `vector(1536)` embedding column to match `text-embedding-3-small` output dimensions, declared with Drizzle's pgvector column type.
+  - [x] Do not add an ANN index (HNSW/IVFFlat) in Phase 1. With ~50 rows a sequential scan is faster and simpler; revisit indexing only when the catalog grows. Record this as an intentional decision.
+  - [x] Create migrations and a repeatable migration workflow.
+- [x] Confirm Drizzle's pgvector column type works end to end (define, migrate, insert, query) early, since it gates schema, import, and search work.
+- [x] Confirm local development can run with Bun and the current project scripts.
 
 ## Milestone 2: Data Import And Embeddings
 
 - [ ] Define the Phase 1 sample CSV shape, including columns for title, author, abstract, and keywords.
+- [ ] Decision — one combined embedding per book (not per field): Phase 1 builds a single concatenated text payload from title, author, abstract, and keywords and embeds it once. This deviates from the specification's "embeddings of various catalog metadata fields" (per-field embeddings) as a deliberate simplification: it is sufficient for ~50 books, keeps schema and ranking simple, and exact-match needs are covered by the lexical/trigram path rather than per-field vectors. Per-field embeddings can be revisited in a future phase if field-weighted ranking is needed.
 - [ ] Create a seed/import script that:
   - [ ] Reads the sample CSV file.
   - [ ] Normalizes author data into the author table.
   - [ ] Normalizes keywords into the keyword table.
   - [ ] Creates book records and relationship records.
-  - [ ] Builds a searchable text payload from title, author, abstract, and keywords.
-  - [ ] Generates embeddings using OpenAI `text-embedding-3-small`.
+  - [ ] Builds the single searchable text payload from title, author, abstract, and keywords.
+  - [ ] Generates embeddings server-side using OpenAI `text-embedding-3-small`.
   - [ ] Stores the generated embeddings in PostgreSQL.
 - [ ] Add a repeatable refresh workflow for prototype development:
   - [ ] Clear or replace imported sample data.
@@ -79,6 +83,7 @@ Phase 1 data will use existing catalog metadata fields only:
   - "book about crayons"
   - "spooky story with underwear"
   - "books with animals and adventure"
+- [ ] Embed the submitted query server-side (server action or route handler) so `OPENAI_API_KEY` is never exposed to the client. Trigger search on submit, not on every keystroke, to avoid unnecessary embedding calls.
 - [ ] Return ranked book results only.
 - [ ] Do not include match explanations in Phase 1.
 - [ ] Prefer a combined search strategy if feasible:
@@ -97,10 +102,12 @@ Phase 1 data will use existing catalog metadata fields only:
 
 ## Milestone 4: Related Recommendations
 
-- [ ] Build a title-entry recommendation workflow without autocomplete.
-- [ ] Let users enter a book title manually.
-- [ ] Match the entered title against books in the prototype database.
-- [ ] If a matching book is found, use its stored embedding to find similar books.
+- [ ] Build a title-entry recommendation workflow with autocomplete over the local catalog.
+  - [ ] As the user types, suggest matching titles from the prototype database (case-insensitive substring plus `pg_trgm` fuzzy matching for typo tolerance against the small, known title set).
+  - [ ] The user selects a specific book from the suggestions, which resolves directly to a book record by id. This removes the ambiguity and exact-string fragility of free-text title matching.
+  - [ ] If the user submits free text without selecting a suggestion, fall back to the best fuzzy title match; show a clear "no matching book" state when nothing is close enough.
+- [ ] Once a book is resolved, use its stored embedding to find similar books by vector similarity.
+- [ ] Exclude the source book itself from its own recommendation results (it will always be the closest match to its own embedding).
 - [ ] Return up to 10 recommendations from the local prototype database only.
 - [ ] Do not force low-quality recommendations:
   - [ ] Apply a reasonable similarity threshold.
@@ -123,7 +130,8 @@ Phase 1 data will use existing catalog metadata fields only:
   - [ ] The import script loads the sample dataset.
   - [ ] Embeddings are generated and stored.
   - [ ] Search returns ranked results.
-  - [ ] Recommendation results are capped at 10.
+  - [ ] Title autocomplete suggests matching books and resolves a selection to a single book.
+  - [ ] Recommendation results are capped at 10 and exclude the source book.
   - [ ] Low-similarity recommendations are filtered out.
   - [ ] Desktop and mobile layouts remain usable.
   - [ ] Bun scripts, Biome checks, and Next.js build pass.
@@ -163,7 +171,6 @@ Phase 1 will not include:
 - Image embeddings.
 - Multimodal image and text search.
 - Complex faceted metadata search.
-- Autocomplete for title entry.
 - AI-generated recommendations outside the prototype database.
 - Recommendation explanations.
 - Search result explanations.

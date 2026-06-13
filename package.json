@@ -9,6 +9,8 @@
     "db:check-vector": "bun run scripts/check-vector.ts",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
+    "data:enrich-books": "bun run scripts/enrich-open-library.ts",
+    "data:extract-subjects": "bun run scripts/extract-subjects.ts",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"

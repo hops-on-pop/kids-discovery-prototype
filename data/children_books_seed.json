@@ -1,0 +1,772 @@
+[
+  {
+    "title": "Where the Wild Things Are",
+    "author": "Maurice Sendak",
+    "series": null
+  },
+  {
+    "title": "The Very Hungry Caterpillar",
+    "author": "Eric Carle",
+    "series": null
+  },
+  {
+    "title": "The Giving Tree",
+    "author": "Shel Silverstein",
+    "series": null
+  },
+  {
+    "title": "Goodnight Moon",
+    "author": "Margaret Wise Brown",
+    "series": null
+  },
+  {
+    "title": "Charlotte's Web",
+    "author": "E.B. White",
+    "series": null
+  },
+  {
+    "title": "Green Eggs and Ham",
+    "author": "Dr. Seuss",
+    "series": null
+  },
+  {
+    "title": "The Cat in the Hat",
+    "author": "Dr. Seuss",
+    "series": null
+  },
+  {
+    "title": "Oh, the Places You'll Go!",
+    "author": "Dr. Seuss",
+    "series": null
+  },
+  {
+    "title": "Where the Sidewalk Ends",
+    "author": "Shel Silverstein",
+    "series": null
+  },
+  {
+    "title": "The Snowy Day",
+    "author": "Ezra Jack Keats",
+    "series": null
+  },
+  {
+    "title": "Corduroy",
+    "author": "Don Freeman",
+    "series": null
+  },
+  {
+    "title": "Make Way for Ducklings",
+    "author": "Robert McCloskey",
+    "series": null
+  },
+  {
+    "title": "Brown Bear, Brown Bear, What Do You See?",
+    "author": "Bill Martin Jr.",
+    "series": null
+  },
+  {
+    "title": "Guess How Much I Love You",
+    "author": "Sam McBratney",
+    "series": null
+  },
+  {
+    "title": "Love You Forever",
+    "author": "Robert Munsch",
+    "series": null
+  },
+  {
+    "title": "Alexander and the Terrible, Horrible, No Good, Very Bad Day",
+    "author": "Judith Viorst",
+    "series": null
+  },
+  {
+    "title": "Madeline",
+    "author": "Ludwig Bemelmans",
+    "series": null
+  },
+  {
+    "title": "Harold and the Purple Crayon",
+    "author": "Crockett Johnson",
+    "series": null
+  },
+  {
+    "title": "The Tale of Peter Rabbit",
+    "author": "Beatrix Potter",
+    "series": null
+  },
+  {
+    "title": "The Polar Express",
+    "author": "Chris Van Allsburg",
+    "series": null
+  },
+  {
+    "title": "The Rainbow Fish",
+    "author": "Marcus Pfister",
+    "series": null
+  },
+  {
+    "title": "Stellaluna",
+    "author": "Janell Cannon",
+    "series": null
+  },
+  {
+    "title": "The Gruffalo",
+    "author": "Julia Donaldson",
+    "series": null
+  },
+  {
+    "title": "Dragons Love Tacos",
+    "author": "Adam Rubin",
+    "series": null
+  },
+  {
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett",
+    "series": null
+  },
+  {
+    "title": "Anne of Green Gables",
+    "author": "L.M. Montgomery",
+    "series": null
+  },
+  {
+    "title": "Heidi",
+    "author": "Johanna Spyri",
+    "series": null
+  },
+  {
+    "title": "Black Beauty",
+    "author": "Anna Sewell",
+    "series": null
+  },
+  {
+    "title": "The Wind in the Willows",
+    "author": "Kenneth Grahame",
+    "series": null
+  },
+  {
+    "title": "The Little Prince",
+    "author": "Antoine de Saint‑Exupéry",
+    "series": null
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "series": null
+  },
+  {
+    "title": "A Wrinkle in Time",
+    "author": "Madeleine L'Engle",
+    "series": null
+  },
+  {
+    "title": "The Phantom Tollbooth",
+    "author": "Norton Juster",
+    "series": null
+  },
+  {
+    "title": "Island of the Blue Dolphins",
+    "author": "Scott O'Dell",
+    "series": null
+  },
+  {
+    "title": "Holes",
+    "author": "Louis Sachar",
+    "series": null
+  },
+  {
+    "title": "The Giver",
+    "author": "Lois Lowry",
+    "series": null
+  },
+  {
+    "title": "Number the Stars",
+    "author": "Lois Lowry",
+    "series": null
+  },
+  {
+    "title": "Bridge to Terabithia",
+    "author": "Katherine Paterson",
+    "series": null
+  },
+  {
+    "title": "Because of Winn-Dixie",
+    "author": "Kate DiCamillo",
+    "series": null
+  },
+  {
+    "title": "The Tale of Despereaux",
+    "author": "Kate DiCamillo",
+    "series": null
+  },
+  {
+    "title": "Hatchet",
+    "author": "Gary Paulsen",
+    "series": null
+  },
+  {
+    "title": "Maniac Magee",
+    "author": "Jerry Spinelli",
+    "series": null
+  },
+  {
+    "title": "Tuck Everlasting",
+    "author": "Natalie Babbitt",
+    "series": null
+  },
+  {
+    "title": "Wonder",
+    "author": "R.J. Palacio",
+    "series": null
+  },
+  {
+    "title": "Fish in a Tree",
+    "author": "Lynda Mullaly Hunt",
+    "series": null
+  },
+  {
+    "title": "Out of My Mind",
+    "author": "Sharon Draper",
+    "series": null
+  },
+  {
+    "title": "Frindle",
+    "author": "Andrew Clements",
+    "series": null
+  },
+  {
+    "title": "Matilda",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "Charlie and the Chocolate Factory",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "James and the Giant Peach",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "Fantastic Mr. Fox",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "The BFG",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "The Witches",
+    "author": "Roald Dahl",
+    "series": null
+  },
+  {
+    "title": "The One and Only Ivan",
+    "author": "Katherine Applegate",
+    "series": null
+  },
+  {
+    "title": "The Wild Robot",
+    "author": "Peter Brown",
+    "series": null
+  },
+  {
+    "title": "The Wild Robot Escapes",
+    "author": "Peter Brown",
+    "series": null
+  },
+  {
+    "title": "Escape from Mr. Lemoncello's Library",
+    "author": "Chris Grabenstein",
+    "series": null
+  },
+  {
+    "title": "Fablehaven",
+    "author": "Brandon Mull",
+    "series": null
+  },
+  {
+    "title": "Artemis Fowl",
+    "author": "Eoin Colfer",
+    "series": null
+  },
+  {
+    "title": "Inkheart",
+    "author": "Cornelia Funke",
+    "series": null
+  },
+  {
+    "title": "Eragon",
+    "author": "Christopher Paolini",
+    "series": null
+  },
+  {
+    "title": "Redwall",
+    "author": "Brian Jacques",
+    "series": null
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "series": "Harry Potter"
+  },
+  {
+    "title": "Percy Jackson and the Olympians: The Lightning Thief",
+    "author": "Rick Riordan",
+    "series": "Percy Jackson and the Olympians"
+  },
+  {
+    "title": "Percy Jackson and the Olympians: The Sea of Monsters",
+    "author": "Rick Riordan",
+    "series": "Percy Jackson and the Olympians"
+  },
+  {
+    "title": "Percy Jackson and the Olympians: The Titan's Curse",
+    "author": "Rick Riordan",
+    "series": "Percy Jackson and the Olympians"
+  },
+  {
+    "title": "Percy Jackson and the Olympians: The Battle of the Labyrinth",
+    "author": "Rick Riordan",
+    "series": "Percy Jackson and the Olympians"
+  },
+  {
+    "title": "Percy Jackson and the Olympians: The Last Olympian",
+    "author": "Rick Riordan",
+    "series": "Percy Jackson and the Olympians"
+  },
+  {
+    "title": "Diary of a Wimpy Kid",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: Rodrick Rules",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: The Last Straw",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: Dog Days",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: The Ugly Truth",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: Cabin Fever",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: The Third Wheel",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: Hard Luck",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: The Long Haul",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Diary of a Wimpy Kid: Old School",
+    "author": "Jeff Kinney",
+    "series": "Diary of a Wimpy Kid"
+  },
+  {
+    "title": "Dog Man: Dog Man",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Dog Man Unleashed",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: A Tale of Two Kitties",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Dog Man and Cat Kid",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Lord of the Fleas",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Brawl of the Wild",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: For Whom the Ball Rolls",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Fetch-22",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Grime and Punishment",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "Dog Man: Mothering Heights",
+    "author": "Dav Pilkey",
+    "series": "Dog Man"
+  },
+  {
+    "title": "The Adventures of Captain Underpants",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Attack of the Talking Toilets",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Invasion of the Incredibly Naughty Cafeteria Ladies",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Perilous Plot of Professor Poopypants",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Wrath of the Wicked Wedgie Woman",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Big, Bad Battle of the Bionic Booger Boy Part 1",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Big, Bad Battle of the Bionic Booger Boy Part 2",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Preposterous Plight of the Purple Potty People",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Terrifying Return of Tippy Tinkletrousers",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Captain Underpants and the Revolting Revenge of the Radioactive Robo-Boxers",
+    "author": "Dav Pilkey",
+    "series": "Captain Underpants"
+  },
+  {
+    "title": "Magic Tree House #1: Dinosaurs Before Dark",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #2: The Knight at Dawn",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #3: Mummies in the Morning",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #4: Pirates Past Noon",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #5: Night of the Ninjas",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #6: Afternoon on the Amazon",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #7: Sunset of the Sabertooth",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #8: Midnight on the Moon",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #9: Dolphins at Daybreak",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Magic Tree House #10: Ghost Town at Sundown",
+    "author": "Mary Pope Osborne",
+    "series": "Magic Tree House"
+  },
+  {
+    "title": "Goosebumps #1: Welcome to Dead House",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #2: Stay Out of the Basement",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #3: Monster Blood",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #4: Say Cheese and Die!",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #5: The Curse of the Mummy's Tomb",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #6: Let's Get Invisible!",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #7: Night of the Living Dummy",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #8: The Haunted Mask",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #9: Welcome to Camp Nightmare",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "Goosebumps #10: Ghost Beach",
+    "author": "R.L. Stine",
+    "series": "Goosebumps"
+  },
+  {
+    "title": "The Baby-Sitters Club #1: Kristy's Great Idea",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #2: Claudia and the Phantom Phone Calls",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #3: The Truth About Stacey",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #4: Mary Anne Saves the Day",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #5: Dawn and the Impossible Three",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #6: Kristy's Big Day",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #7: Claudia and Mean Janine",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #8: Boy-Crazy Stacey",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #9: The Ghost at Dawn's House",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "The Baby-Sitters Club #10: Logan Likes Mary Anne!",
+    "author": "Ann M. Martin",
+    "series": "Baby-Sitters Club"
+  },
+  {
+    "title": "Junie B. Jones and the Stupid Smelly Bus",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones and a Little Monkey Business",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones and Her Big Fat Mouth",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones and Some Sneaky Peeky Spying",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones and the Yucky Blucky Fruitcake",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones Loves Handsome Warren",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones Has a Monster Under Her Bed",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones Is Not a Crook",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones Is a Party Animal",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Junie B. Jones Is a Beauty Shop Guy",
+    "author": "Barbara Park",
+    "series": "Junie B. Jones"
+  },
+  {
+    "title": "Wings of Fire: The Dragonet Prophecy",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: The Lost Heir",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: The Hidden Kingdom",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: The Dark Secret",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: The Brightest Night",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: Moon Rising",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: Winter Turning",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: Escaping Peril",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: Talons of Power",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  },
+  {
+    "title": "Wings of Fire: Darkness of Dragons",
+    "author": "Tui T. Sutherland",
+    "series": "Wings of Fire"
+  }
+]

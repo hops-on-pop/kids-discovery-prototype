@@ -48,7 +48,7 @@ Phase 1 data will use existing catalog metadata fields only:
   - [x] Enable the pgvector extension in PostgreSQL.
   - [x] Enable the `pg_trgm` extension to support trigram-based autocomplete and fuzzy/lexical matching.
   - [x] Define Drizzle schema for books, authors, keywords, and relationships.
-  - [x] Add a `vector(1536)` embedding column to match `text-embedding-3-small` output dimensions, declared with Drizzle's pgvector column type.
+  - [x] Add `vector(1536)` embedding storage to match `text-embedding-3-small` output dimensions, declared with Drizzle's pgvector column type.
   - [x] Do not add an ANN index (HNSW/IVFFlat) in Phase 1. With ~50 rows a sequential scan is faster and simpler; revisit indexing only when the catalog grows. Record this as an intentional decision.
   - [x] Create migrations and a repeatable migration workflow.
 - [x] Confirm Drizzle's pgvector column type works end to end (define, migrate, insert, query) early, since it gates schema, import, and search work.
@@ -57,13 +57,13 @@ Phase 1 data will use existing catalog metadata fields only:
 ## Milestone 2: Data Import And Embeddings
 
 - [ ] Define the Phase 1 sample CSV shape, including columns for title, author, abstract, and keywords.
-- [ ] Decision — one combined embedding per book (not per field): Phase 1 builds a single concatenated text payload from title, author, abstract, and keywords and embeds it once. This deviates from the specification's "embeddings of various catalog metadata fields" (per-field embeddings) as a deliberate simplification: it is sufficient for ~50 books, keeps schema and ranking simple, and exact-match needs are covered by the lexical/trigram path rather than per-field vectors. Per-field embeddings can be revisited in a future phase if field-weighted ranking is needed.
+- [ ] Decision — field-specific embeddings: Phase 1 stores distinct embeddings for title, description, and keywords in a separate `book_embeddings` table. Author matching remains lexical/fuzzy rather than vector-based. This keeps search and recommendation ranking tunable without mixing high-signal descriptions with noisy or overly broad keyword data.
 - [ ] Create a seed/import script that:
   - [ ] Reads the sample CSV file.
   - [ ] Normalizes author data into the author table.
   - [ ] Normalizes keywords into the keyword table.
   - [ ] Creates book records and relationship records.
-  - [ ] Builds the single searchable text payload from title, author, abstract, and keywords.
+  - [ ] Builds field-specific embedding payloads from title, description/abstract, and cleaned keywords.
   - [ ] Generates embeddings server-side using OpenAI `text-embedding-3-small`.
   - [ ] Stores the generated embeddings in PostgreSQL.
 - [ ] Add a repeatable refresh workflow for prototype development:

@@ -5,7 +5,7 @@ import { cosineDistance } from "drizzle-orm/sql/functions/vector";
 loadEnvConfig(process.cwd());
 
 const { db, sql } = await import("../src/db");
-const { books } = await import("../src/db/schema");
+const { bookEmbeddings, books } = await import("../src/db/schema");
 
 const embedding = Array.from({ length: 1536 }, (_, index) =>
   index === 0 ? 1 : 0,
@@ -19,7 +19,6 @@ const [inserted] = await db
     titleNormalized: title,
     abstract: "Temporary vector check row.",
     searchableText: "Temporary vector check row.",
-    embedding,
   })
   .returning({ id: books.id });
 
@@ -28,14 +27,23 @@ if (!inserted) {
   throw new Error("Vector check insert did not return a row.");
 }
 
+await db.insert(bookEmbeddings).values({
+  bookId: inserted.id,
+  fieldName: "description",
+  text: "Temporary vector check row.",
+  textHash: title,
+  model: "text-embedding-3-small",
+  embedding,
+});
+
 try {
   const [result] = await db
     .select({
-      id: books.id,
-      distance: cosineDistance(books.embedding, embedding),
+      bookId: bookEmbeddings.bookId,
+      distance: cosineDistance(bookEmbeddings.embedding, embedding),
     })
-    .from(books)
-    .where(eq(books.id, inserted.id))
+    .from(bookEmbeddings)
+    .where(eq(bookEmbeddings.bookId, inserted.id))
     .limit(1);
 
   const distance = Number(result?.distance);
@@ -44,7 +52,7 @@ try {
     throw new Error(`Unexpected vector distance: ${result?.distance}`);
   }
 
-  console.log(`pgvector check passed for book id ${inserted.id}.`);
+  console.log(`pgvector check passed for book id ${result?.bookId}.`);
 } finally {
   await db.delete(books).where(eq(books.id, inserted.id));
   await sql.end();

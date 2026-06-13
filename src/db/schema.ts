@@ -2,6 +2,7 @@ import { relations, sql } from "drizzle-orm";
 import {
   index,
   integer,
+  pgEnum,
   pgTable,
   primaryKey,
   serial,
@@ -11,6 +12,12 @@ import {
 } from "drizzle-orm/pg-core";
 import { vector } from "drizzle-orm/pg-core/columns/vector_extension/vector";
 
+export const bookEmbeddingField = pgEnum("book_embedding_field", [
+  "title",
+  "description",
+  "keywords",
+]);
+
 export const books = pgTable(
   "books",
   {
@@ -19,7 +26,6 @@ export const books = pgTable(
     titleNormalized: text("title_normalized").notNull(),
     abstract: text("abstract").notNull(),
     searchableText: text("searchable_text").notNull(),
-    embedding: vector("embedding", { dimensions: 1536 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .defaultNow()
       .notNull(),
@@ -33,6 +39,33 @@ export const books = pgTable(
       "gin",
       sql`${table.title} gin_trgm_ops`,
     ),
+  ],
+);
+
+export const bookEmbeddings = pgTable(
+  "book_embeddings",
+  {
+    bookId: integer("book_id")
+      .notNull()
+      .references(() => books.id, { onDelete: "cascade" }),
+    fieldName: bookEmbeddingField("field_name").notNull(),
+    text: text("text").notNull(),
+    textHash: text("text_hash").notNull(),
+    model: text("model").notNull(),
+    embedding: vector("embedding", { dimensions: 1536 }).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => [
+    primaryKey({
+      columns: [table.bookId, table.fieldName],
+      name: "book_embeddings_pkey",
+    }),
+    index("book_embeddings_field_name_idx").on(table.fieldName),
   ],
 );
 
@@ -112,7 +145,15 @@ export const booksKeywords = pgTable(
 
 export const booksRelations = relations(books, ({ many }) => ({
   booksAuthors: many(booksAuthors),
+  bookEmbeddings: many(bookEmbeddings),
   booksKeywords: many(booksKeywords),
+}));
+
+export const bookEmbeddingsRelations = relations(bookEmbeddings, ({ one }) => ({
+  book: one(books, {
+    fields: [bookEmbeddings.bookId],
+    references: [books.id],
+  }),
 }));
 
 export const authorsRelations = relations(authors, ({ many }) => ({

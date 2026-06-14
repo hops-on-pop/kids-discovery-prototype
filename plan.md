@@ -86,27 +86,34 @@ Phase 1 data will use existing catalog metadata fields only:
 
 ## Milestone 3: Search Workflow
 
-- [ ] Build a user-facing search experience where users enter natural language phrases such as:
+- [x] Build a user-facing search experience at `/search` where users enter natural language phrases such as:
   - "funny alphabet book"
   - "book about crayons"
   - "spooky story with underwear"
   - "books with animals and adventure"
-- [ ] Embed the submitted query server-side (server action or route handler) so `OPENAI_API_KEY` is never exposed to the client. Trigger search on submit, not on every keystroke, to avoid unnecessary embedding calls.
-- [ ] Return ranked book results only.
-- [ ] Do not include match explanations in Phase 1.
-- [ ] Prefer a combined search strategy if feasible:
-  - [ ] Vector similarity for natural language meaning.
-  - [ ] Lexical matching for exact or near-exact title, author, and keyword matches.
-- [ ] Document and evaluate the two search approaches during implementation:
-  - [ ] Vector-only search is simpler and better for broad semantic queries.
-  - [ ] Combined vector and lexical search is more reliable for exact titles, author names, keywords, and partial child-style descriptions.
-- [ ] Treat typo tolerance and fuzzy matching as desirable but scope-sensitive:
-  - [ ] Include it if a lightweight implementation fits cleanly.
-  - [ ] Defer it if it adds too much complexity to the Phase 1 prototype.
-- [ ] Define result behavior:
-  - [ ] Rank strongest matches first.
-  - [ ] Limit results to a manageable count for scanning.
-  - [ ] Show enough book metadata for users to identify likely matches.
+- [x] Embed the submitted query server-side (server action or route handler) so `OPENAI_API_KEY` is never exposed to the client. Trigger search on submit, not on every keystroke, to avoid unnecessary embedding calls.
+- [x] Return ranked book results only.
+- [x] Do not include match explanations in Phase 1.
+- [x] Use a combined search strategy:
+  - [x] Check exact or near-exact title and author matches first, so known-title and known-author searches can rank above broader semantic matches.
+  - [x] Use vector similarity for natural language meaning.
+  - [x] Use lexical matching for exact or near-exact title, author, and keyword matches.
+  - [x] Start with a weighted ranking formula that gives title more influence than the earlier recommendation draft and gives keywords less influence. Initial target weights:
+    - [x] Description vector: 55%.
+    - [x] Title vector: 20%.
+    - [x] Keyword vector: 10%.
+    - [x] Lexical title/author/keyword signal: 15%.
+- [x] Document and evaluate the two search approaches during implementation:
+  - [x] Vector-only search is simpler and better for broad semantic queries.
+  - [x] Combined vector and lexical search is more reliable for exact titles, author names, keywords, and partial child-style descriptions.
+- [x] Treat typo tolerance and fuzzy matching as desirable but scope-sensitive:
+  - [x] Include it if a lightweight implementation fits cleanly.
+  - [x] Defer it if it adds too much complexity to the Phase 1 prototype.
+- [x] Define result behavior:
+  - [x] Rank strongest matches first.
+  - [x] Return up to 12 results for broader discovery.
+  - [x] Apply an initial minimum score threshold selected during implementation, then tune after sample queries are tested.
+  - [x] Show enough book metadata for users to identify likely matches.
 
 ## Milestone 4: Related Recommendations
 

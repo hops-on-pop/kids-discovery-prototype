@@ -936,12 +936,21 @@
       "editionKey": "/books/OL47008090M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/love-you-forever-robert-munsch.jpg",
       "isbn10": "1439596654",
       "isbn13": "9781439596654",
       "firstPublishYear": 2009,
       "language": [],
-      "subjects": [],
+      "subjects": [
+        "Mother and child",
+        "Parent and child",
+        "Love",
+        "Family",
+        "Aging",
+        "Picture books for children",
+        "Juvenile fiction",
+        "Life cycle"
+      ],
       "publishers": [
         "Paw Prints"
       ],
@@ -949,7 +958,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "A mother sings a tender lullaby to her newborn son, promising to love him forever. As he grows from a mischievous toddler into a grown man, she keeps rocking him and singing the same song. When she becomes old and frail, her son comes to cradle and sing to her, then carries the song home to his own new baby daughter."
     }
   },
   {
@@ -1237,7 +1246,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "On Christmas Eve, a young boy boards a mysterious train bound for the North Pole. There he meets Santa Claus, who offers him the first gift of Christmas: a silver sleigh bell that rings only for those who truly believe. A magical, Caldecott Medal-winning story about faith and the spirit of Christmas."
     }
   },
   {
@@ -2821,7 +2830,7 @@
       "ratingsAverage": 4.3846154,
       "ratingsCount": 13,
       "editionCount": 9,
-      "description": null
+      "description": "Ally has hidden her struggle to read by acting out and moving from school to school, but a perceptive new teacher, Mr. Daniels, sees the bright, creative girl beneath the trouble. With his encouragement and two unlikely friends, Ally learns that being different is not a weakness and that everyone is smart in their own way."
     }
   },
   {
@@ -3720,7 +3729,7 @@
       "editionKey": "/books/OL52551084M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/inkheart-cornelia-funke.jpg",
       "isbn10": "1913696189",
       "isbn13": "9781913696184",
       "firstPublishYear": 2024,
@@ -3728,7 +3737,14 @@
         "eng"
       ],
       "subjects": [
-        "Children's fiction"
+        "Fantasy",
+        "Books and reading",
+        "Fathers and daughters",
+        "Adventure and adventurers",
+        "Magic",
+        "Characters in literature",
+        "Storytelling",
+        "Juvenile fiction"
       ],
       "publishers": [
         "Chicken House, The"
@@ -3737,7 +3753,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 2,
-      "description": null
+      "description": "Twelve-year-old Meggie discovers that her father, a bookbinder, has a rare and dangerous gift: when he reads a story aloud, its characters come to life and step out of the page. When a villain named Capricorn, who was read out of a book called Inkheart, comes hunting for him, Meggie is swept into a thrilling adventure where the line between fiction and reality disappears."
     }
   },
   {
@@ -3910,7 +3926,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "On his eleventh birthday, Harry Potter learns that he is a wizard and is whisked away to Hogwarts School of Witchcraft and Wizardry. There he makes lifelong friends, learns to play Quidditch, and uncovers the mystery of the Sorcerer's Stone, all while confronting the dark wizard who killed his parents."
     }
   },
   {
@@ -5481,12 +5497,21 @@
       "editionKey": "/books/OL38229851M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/dog-man-a-tale-of-two-kitties-dav-pilkey.jpg",
       "isbn10": "9123786302",
       "isbn13": "9789123786305",
       "firstPublishYear": 2019,
       "language": [],
-      "subjects": [],
+      "subjects": [
+        "Graphic novels",
+        "Humorous stories",
+        "Dogs",
+        "Cats",
+        "Police",
+        "Good and evil",
+        "Juvenile fiction",
+        "Comics"
+      ],
       "publishers": [
         "S"
       ],
@@ -5494,7 +5519,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "Dog Man, the crime-fighting hero who is part dog and part man, is back on the beat. When his nemesis, the cunning cat Petey, clones himself and accidentally creates an adorable but troublesome kitten named Li'l Petey, Dog Man must juggle catching criminals with surprising matters of the heart. A graphic novel packed with humor, action, and heart."
     }
   },
   {
@@ -5562,12 +5587,21 @@
       "editionKey": "/books/OL38229851M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/dog-man-lord-of-the-fleas-dav-pilkey.jpg",
       "isbn10": "9123786302",
       "isbn13": "9789123786305",
       "firstPublishYear": 2019,
       "language": [],
-      "subjects": [],
+      "subjects": [
+        "Graphic novels",
+        "Humorous stories",
+        "Dogs",
+        "Cats",
+        "Heroes",
+        "Friendship",
+        "Juvenile fiction",
+        "Comics"
+      ],
       "publishers": [
         "S"
       ],
@@ -5575,7 +5609,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "A new gang of bad guys, the Fair-Weather Friends, rolls into town, and it is up to Dog Man, Li'l Petey, and a cast of returning heroes to stop them. With supa-cool action and plenty of laughs, this graphic novel explores friendship, family, and doing the right thing even when it is hard."
     }
   },
   {
@@ -5589,12 +5623,21 @@
       "editionKey": "/books/OL38229851M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/dog-man-brawl-of-the-wild-dav-pilkey.jpg",
       "isbn10": "9123786302",
       "isbn13": "9789123786305",
       "firstPublishYear": 2019,
       "language": [],
-      "subjects": [],
+      "subjects": [
+        "Graphic novels",
+        "Humorous stories",
+        "Dogs",
+        "Cats",
+        "Prisons",
+        "Friendship",
+        "Juvenile fiction",
+        "Comics"
+      ],
       "publishers": [
         "S"
       ],
@@ -5602,7 +5645,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "When Dog Man is framed for a crime he did not commit and locked up in the pound, his friends must work together to clear his name. Meanwhile, Li'l Petey searches for the goodness inside everyone. A funny, action-packed graphic novel about loyalty, second chances, and believing in yourself."
     }
   },
   {
@@ -6679,14 +6722,23 @@
       "editionKey": "/books/OL53337648M",
       "coverId": null,
       "coverUrl": null,
-      "localCoverPath": null,
+      "localCoverPath": "public/book-covers/magic-tree-house-4-pirates-past-noon-mary-pope-osborne.jpg",
       "isbn10": null,
       "isbn13": "9798855100174",
       "firstPublishYear": 1994,
       "language": [
         "eng"
       ],
-      "subjects": [],
+      "subjects": [
+        "Pirates",
+        "Time travel",
+        "Brothers and sisters",
+        "Adventure and adventurers",
+        "Magic",
+        "Treasure",
+        "Tree houses",
+        "Juvenile fiction"
+      ],
       "publishers": [
         "Bound to Stay Bound Books"
       ],
@@ -6694,7 +6746,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 1,
-      "description": null
+      "description": "Jack and Annie's magic tree house whisks them back to the days of deserted islands and buried treasure, landing them face-to-face with a band of fierce pirates. The brother and sister must use their wits to escape Cap'n Bones and his crew before they are forced to walk the plank."
     }
   },
   {
@@ -8050,7 +8102,7 @@
       "ratingsAverage": 4,
       "ratingsCount": 1,
       "editionCount": 2,
-      "description": null
+      "description": "Kristy's mother is getting married, and the whole Baby-Sitters Club pitches in to watch fourteen children during the busy wedding week. Amid crying toddlers, runaway pets, and last-minute plans, Kristy learns about family, change, and the power of teamwork."
     }
   },
   {
@@ -8950,7 +9002,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 3,
-      "description": null
+      "description": "Five young dragons, Clay, Tsunami, Glory, Starflight, and Sunny, have been raised in secret to fulfill a prophecy meant to end the war ravaging the dragon tribes. But the dragonets have their own ideas about destiny, and they will risk everything to choose their own path."
     }
   },
   {
@@ -9036,7 +9088,16 @@
       "language": [
         "eng"
       ],
-      "subjects": [],
+      "subjects": [
+        "Dragons",
+        "Fantasy",
+        "Adventure and adventurers",
+        "Prophecies",
+        "Friendship",
+        "War",
+        "Magic",
+        "Juvenile fiction"
+      ],
       "publishers": [
         "Scholastic, Incorporated",
         "scholastic",
@@ -9046,7 +9107,7 @@
       "ratingsAverage": null,
       "ratingsCount": null,
       "editionCount": 4,
-      "description": null
+      "description": "In the third book of the Wings of Fire series, Glory, the underestimated RainWing dragonet of destiny, flees with her friends to the hidden rainforest kingdom. There she discovers her own surprising powers and uncovers dark secrets about the lazy RainWings and the dragons who have been mysteriously disappearing from the forest."
     }
   },
   {

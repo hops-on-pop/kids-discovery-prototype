@@ -26,6 +26,7 @@ export const books = pgTable(
     titleNormalized: text("title_normalized").notNull(),
     abstract: text("abstract").notNull(),
     searchableText: text("searchable_text").notNull(),
+    coverPath: text("cover_path"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .defaultNow()
       .notNull(),

@@ -11,6 +11,8 @@
     "db:push": "drizzle-kit push",
     "data:enrich-books": "bun run scripts/enrich-open-library.ts",
     "data:extract-subjects": "bun run scripts/extract-subjects.ts",
+    "data:generate-embeddings": "bun run scripts/generate-book-embeddings.ts",
+    "db:seed": "bun run scripts/seed.ts",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"

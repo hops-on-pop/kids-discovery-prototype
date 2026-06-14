@@ -9,7 +9,7 @@ This roadmap defines the Phase 1 implementation plan for the Kids Discovery Prot
 
 The prototype will be optimized for desktop display first, with responsive mobile styling where practical. Functionality is the priority, with visual polish added where it supports a simple, age-appropriate, image-forward experience.
 
-Phase 1 will use a small sample catalog dataset, expected to contain roughly 50 books. The dataset will be imported from a CSV or similar file into PostgreSQL, and searchable embeddings will be generated with OpenAI `text-embedding-3-small`.
+Phase 1 will use a small sample catalog dataset sourced from Open Library metadata and locally cleaned keyword/subject data. Field-specific embeddings will be cached locally as JSONL with OpenAI `text-embedding-3-small` before PostgreSQL seeding, so the database can be reset without regenerating unchanged embeddings.
 
 ## Phase 1 Scope
 
@@ -56,25 +56,33 @@ Phase 1 data will use existing catalog metadata fields only:
 
 ## Milestone 2: Data Import And Embeddings
 
-- [ ] Define the Phase 1 sample CSV shape, including columns for title, author, abstract, and keywords.
-- [ ] Decision — field-specific embeddings: Phase 1 stores distinct embeddings for title, description, and keywords in a separate `book_embeddings` table. Author matching remains lexical/fuzzy rather than vector-based. This keeps search and recommendation ranking tunable without mixing high-signal descriptions with noisy or overly broad keyword data.
-- [ ] Create a seed/import script that:
-  - [ ] Reads the sample CSV file.
-  - [ ] Normalizes author data into the author table.
-  - [ ] Normalizes keywords into the keyword table.
-  - [ ] Creates book records and relationship records.
-  - [ ] Builds field-specific embedding payloads from title, description/abstract, and cleaned keywords.
-  - [ ] Generates embeddings server-side using OpenAI `text-embedding-3-small`.
-  - [ ] Stores the generated embeddings in PostgreSQL.
-- [ ] Add a repeatable refresh workflow for prototype development:
-  - [ ] Clear or replace imported sample data.
-  - [ ] Re-run the import script.
-  - [ ] Regenerate embeddings when the sample data changes.
-- [ ] Include basic import validation:
-  - [ ] Missing title or abstract handling.
-  - [ ] Duplicate title handling.
-  - [ ] Keyword parsing.
-  - [ ] Failed embedding request handling.
+- [x] Define the Phase 1 sample data source as enriched Open Library JSON plus cleaned subject/keyword data.
+- [x] Decision — field-specific embeddings: Phase 1 stores distinct embeddings for title, description, and keywords in a separate `book_embeddings` table. Author matching remains lexical/fuzzy rather than vector-based. This keeps search and recommendation ranking tunable without mixing high-signal descriptions with noisy or overly broad keyword data.
+- [x] Create a local embedding-cache script that:
+  - [x] Reads `data/children_books_openlibrary.json`.
+  - [x] Uses `data/children_books_subjects.json` as the cleaned keyword/subject source.
+  - [x] Builds field-specific embedding payloads for title, description/abstract, and keywords.
+  - [x] Generates embeddings with OpenAI `text-embedding-3-small`.
+  - [x] Writes `data/children_books_embeddings.jsonl`.
+  - [x] Reuses unchanged field embeddings by comparing per-field text hashes.
+  - [x] Uses conservative batching, retries, and delays to reduce rate-limit risk.
+- [x] Run the embedding-cache script to create `data/children_books_embeddings.jsonl`.
+- [x] Create a seed/import script that:
+  - [x] Reads `data/children_books_embeddings.jsonl`.
+  - [x] Normalizes author data into the author table.
+  - [x] Normalizes keywords into the keyword table.
+  - [x] Creates book records and relationship records.
+  - [x] Stores title, description, and keyword embeddings in `book_embeddings`.
+- [x] Add a repeatable refresh workflow for prototype development:
+  - [x] Clear or replace imported sample data. (`scripts/seed.ts` truncates and reloads.)
+  - [x] Re-run the import script from the local JSONL cache. (`bun run db:seed`.)
+  - [x] Regenerate only changed embeddings when the source text hash changes. (`bun run data:generate-embeddings` reuses by per-field hash.)
+- [x] Include basic import validation:
+  - [x] Missing title or abstract handling.
+  - [x] Duplicate title handling.
+  - [x] Keyword parsing.
+  - [x] Missing or invalid cached embedding handling.
+  - [ ] Failed embedding request handling. (Handled in the embedding-cache script's retries; the seed script consumes the cache only.)
 
 ## Milestone 3: Search Workflow
 
@@ -106,7 +114,7 @@ Phase 1 data will use existing catalog metadata fields only:
   - [ ] As the user types, suggest matching titles from the prototype database (case-insensitive substring plus `pg_trgm` fuzzy matching for typo tolerance against the small, known title set).
   - [ ] The user selects a specific book from the suggestions, which resolves directly to a book record by id. This removes the ambiguity and exact-string fragility of free-text title matching.
   - [ ] If the user submits free text without selecting a suggestion, fall back to the best fuzzy title match; show a clear "no matching book" state when nothing is close enough.
-- [ ] Once a book is resolved, use its stored embedding to find similar books by vector similarity.
+- [ ] Once a book is resolved, use its stored field-specific embeddings to find similar books by weighted vector similarity.
 - [ ] Exclude the source book itself from its own recommendation results (it will always be the closest match to its own embedding).
 - [ ] Return up to 10 recommendations from the local prototype database only.
 - [ ] Do not force low-quality recommendations:
@@ -128,7 +136,7 @@ Phase 1 data will use existing catalog metadata fields only:
 - [ ] Include basic loading, empty, and error states for both workflows.
 - [ ] Validate the prototype with focused checks:
   - [ ] The import script loads the sample dataset.
-  - [ ] Embeddings are generated and stored.
+  - [ ] Embeddings are generated, cached locally, and stored.
   - [ ] Search returns ranked results.
   - [ ] Title autocomplete suggests matching books and resolves a selection to a single book.
   - [ ] Recommendation results are capped at 10 and exclude the source book.

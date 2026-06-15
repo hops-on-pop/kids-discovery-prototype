@@ -117,39 +117,39 @@ Phase 1 data will use existing catalog metadata fields only:
 
 ## Milestone 4: Related Recommendations
 
-- [ ] Build a title-entry recommendation workflow with autocomplete over the local catalog.
-  - [ ] As the user types, suggest matching titles from the prototype database (case-insensitive substring plus `pg_trgm` fuzzy matching for typo tolerance against the small, known title set).
-  - [ ] The user selects a specific book from the suggestions, which resolves directly to a book record by id. This removes the ambiguity and exact-string fragility of free-text title matching.
-  - [ ] If the user submits free text without selecting a suggestion, fall back to the best fuzzy title match; show a clear "no matching book" state when nothing is close enough.
-- [ ] Once a book is resolved, use its stored field-specific embeddings to find similar books by weighted vector similarity.
-- [ ] Exclude the source book itself from its own recommendation results (it will always be the closest match to its own embedding).
-- [ ] Return up to 10 recommendations from the local prototype database only.
-- [ ] Do not force low-quality recommendations:
-  - [ ] Apply a reasonable similarity threshold.
-  - [ ] Return fewer than 10 recommendations when fewer strong matches exist.
-  - [ ] Show an empty or low-results state when no useful recommendations are available.
-- [ ] Do not include recommendation explanations in Phase 1.
-- [ ] Do not use the LLM to suggest books outside the local dataset.
+- [x] Build a title-entry recommendation workflow with autocomplete over the local catalog.
+  - [x] As the user types, suggest matching titles from the prototype database (case-insensitive substring plus `pg_trgm` fuzzy matching for typo tolerance against the small, known title set).
+  - [x] The user selects a specific book from the suggestions, which resolves directly to a book record by id. This removes the ambiguity and exact-string fragility of free-text title matching.
+  - [x] If the user submits free text without selecting a suggestion, fall back to the best fuzzy title match; show a clear "no matching book" state when nothing is close enough.
+- [x] Once a book is resolved, use its stored field-specific embeddings to find similar books by weighted vector similarity.
+- [x] Exclude the source book itself from its own recommendation results (it will always be the closest match to its own embedding).
+- [x] Return up to 12 recommendations from the local prototype database only.
+- [x] Do not force low-quality recommendations:
+  - [x] Apply a reasonable similarity threshold.
+  - [x] Return fewer than 12 recommendations when fewer strong matches exist.
+  - [x] Show an empty or low-results state when no useful recommendations are available.
+- [x] Do not include recommendation explanations in Phase 1.
+- [x] Do not use the LLM to suggest books outside the local dataset.
 
 ## Milestone 5: UI And Validation
 
-- [ ] Replace the default starter page with the prototype application experience.
-- [ ] Provide clear, separate user flows for:
-  - [ ] Search.
-  - [ ] Related recommendations.
-- [ ] Design desktop-first layouts with responsive mobile behavior where practical.
-- [ ] Keep the interface simple and child-friendly without over-investing in visual polish for Phase 1.
-- [ ] Use ShadCN UI components where they help establish consistent controls and accessible defaults.
-- [ ] Include basic loading, empty, and error states for both workflows.
-- [ ] Validate the prototype with focused checks:
-  - [ ] The import script loads the sample dataset.
-  - [ ] Embeddings are generated, cached locally, and stored.
-  - [ ] Search returns ranked results.
-  - [ ] Title autocomplete suggests matching books and resolves a selection to a single book.
-  - [ ] Recommendation results are capped at 10 and exclude the source book.
-  - [ ] Low-similarity recommendations are filtered out.
-  - [ ] Desktop and mobile layouts remain usable.
-  - [ ] Bun scripts, Biome checks, and Next.js build pass.
+- [x] Replace the default starter page with the prototype application experience.
+- [x] Provide clear, separate user flows for:
+  - [x] Search.
+  - [x] Related recommendations.
+- [x] Design desktop-first layouts with responsive mobile behavior where practical.
+- [x] Keep the interface simple and child-friendly without over-investing in visual polish for Phase 1.
+- [x] Use ShadCN UI components where they help establish consistent controls and accessible defaults.
+- [x] Include basic loading, empty, and error states for both workflows.
+- [x] Validate the prototype with focused checks:
+  - [x] The import script loads the sample dataset.
+  - [x] Embeddings are generated, cached locally, and stored.
+  - [x] Search returns ranked results.
+  - [x] Title autocomplete suggests matching books and resolves a selection to a single book.
+  - [x] Recommendation results are capped at 12 and exclude the source book.
+  - [x] Low-similarity recommendations are filtered out.
+  - [x] Desktop and mobile layouts remain usable.
+  - [x] Bun scripts, Biome checks, and Next.js build pass.
 
 ## Future Phases
 

@@ -1,25 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --radius: 0.5rem;
-  --background: oklch(0.985 0.01 95);
-  --foreground: oklch(0.18 0.025 250);
+  --radius: 1.25rem;
+
+  /* Warm, bright base */
+  --background: oklch(0.98 0.02 95);
+  --foreground: oklch(0.28 0.05 285);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.025 250);
+  --card-foreground: oklch(0.28 0.05 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.025 250);
-  --primary: oklch(0.36 0.12 185);
-  --primary-foreground: oklch(0.985 0.01 95);
-  --secondary: oklch(0.93 0.025 80);
-  --secondary-foreground: oklch(0.23 0.03 250);
-  --muted: oklch(0.94 0.015 95);
-  --muted-foreground: oklch(0.46 0.025 250);
-  --accent: oklch(0.88 0.055 145);
-  --accent-foreground: oklch(0.2 0.03 250);
-  --destructive: oklch(0.58 0.2 28);
-  --border: oklch(0.85 0.018 90);
-  --input: oklch(0.83 0.018 90);
-  --ring: oklch(0.58 0.13 185);
+  --popover-foreground: oklch(0.28 0.05 285);
+
+  /* Vivid grape primary */
+  --primary: oklch(0.56 0.21 300);
+  --primary-foreground: oklch(0.99 0.01 95);
+
+  /* Sunny secondary */
+  --secondary: oklch(0.9 0.09 95);
+  --secondary-foreground: oklch(0.34 0.08 70);
+
+  --muted: oklch(0.95 0.025 95);
+  --muted-foreground: oklch(0.48 0.04 285);
+
+  /* Aqua accent */
+  --accent: oklch(0.86 0.11 200);
+  --accent-foreground: oklch(0.3 0.07 235);
+
+  --destructive: oklch(0.6 0.22 25);
+  --border: oklch(0.88 0.03 290);
+  --input: oklch(0.84 0.035 290);
+  --ring: oklch(0.56 0.21 300);
+
+  /* Rainbow set for playful cards + badges */
+  --rainbow-red: oklch(0.64 0.21 25);
+  --rainbow-orange: oklch(0.73 0.17 55);
+  --rainbow-yellow: oklch(0.83 0.16 92);
+  --rainbow-green: oklch(0.7 0.17 150);
+  --rainbow-green-dark: oklch(0.46 0.21 150);
+  --rainbow-blue: oklch(0.62 0.17 240);
+  --rainbow-blue-dark: oklch(0.46 0.21 240);
+  --rainbow-purple: oklch(0.56 0.21 300);
+  --rainbow-pink: oklch(0.68 0.2 350);
 }
 
 @theme inline {
@@ -41,34 +62,46 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: Arial, Helvetica, sans-serif;
+
+  --color-rainbow-red: var(--rainbow-red);
+  --color-rainbow-orange: var(--rainbow-orange);
+  --color-rainbow-yellow: var(--rainbow-yellow);
+  --color-rainbow-green: var(--rainbow-green);
+  --color-rainbow-green-dark: var(--rainbow-green-dark);
+  --color-rainbow-blue: var(--rainbow-blue);
+  --color-rainbow-blue-dark: var(--rainbow-blue-dark);
+  --color-rainbow-purple: var(--rainbow-purple);
+  --color-rainbow-pink: var(--rainbow-pink);
+
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    var(--font-fredoka), var(--font-nunito), ui-sans-serif, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(0.16 0.025 250);
-    --foreground: oklch(0.96 0.01 95);
-    --card: oklch(0.2 0.025 250);
-    --card-foreground: oklch(0.96 0.01 95);
-    --popover: oklch(0.2 0.025 250);
-    --popover-foreground: oklch(0.96 0.01 95);
-    --primary: oklch(0.72 0.14 185);
-    --primary-foreground: oklch(0.16 0.025 250);
-    --secondary: oklch(0.29 0.03 250);
-    --secondary-foreground: oklch(0.96 0.01 95);
-    --muted: oklch(0.27 0.025 250);
-    --muted-foreground: oklch(0.72 0.02 95);
-    --accent: oklch(0.43 0.08 145);
-    --accent-foreground: oklch(0.96 0.01 95);
-    --destructive: oklch(0.68 0.18 28);
-    --border: oklch(0.32 0.025 250);
-    --input: oklch(0.34 0.025 250);
-    --ring: oklch(0.72 0.14 185);
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
   }
 }
 
@@ -79,5 +112,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Playful display headings */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }

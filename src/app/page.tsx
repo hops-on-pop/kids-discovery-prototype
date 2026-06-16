@@ -18,7 +18,7 @@ export default function Home() {
               aria-hidden
               className="size-9 bg-current mask-[url(/book-sparkle.svg)] mask-center mask-no-repeat mask-contain"
             />
-            Book Buddy
+            Book Detective
           </span>
           <h1 className="font-display text-4xl font-bold text-foreground sm:text-6xl">
             Let&apos;s find your next favorite book!
